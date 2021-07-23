@@ -1,6 +1,10 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+
+from .models import Meetup
 
 
 def index(request):
-    return HttpResponse('Here we go again!')
+    meetups = Meetup.objects.all()
+    return render(request, 'meetups_app/index.html', {
+        'meetups': meetups
+    })
