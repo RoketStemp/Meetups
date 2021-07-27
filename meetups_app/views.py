@@ -8,3 +8,7 @@ def index(request):
     return render(request, 'meetups_app/index.html', {
         'meetups': meetups
     })
+
+
+def meetup_detail(request, slug):
+    return render(request, 'meetups_app/meetup-details.html')
